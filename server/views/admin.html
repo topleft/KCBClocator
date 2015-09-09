@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class='col-md-3'>
+        <img src="http://www.kannahcreekbrewingco.com/wp-content/uploads/2015/08/KC_logo_only.png">
+      </div>
+      <div class='col-md-9'>
+        <h1>{{ title }}</h1>
+        <p>Welcome to {{ title }}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+  <div class="row">
+    <div class="col-md-4">
+  <input id="admin-toggle" type="checkbox" name="my-checkbox" checked data-toggle="toggle" data-on="Add" data-off="Update" data-onstyle="warning" data-offstyle="primary" data-width="100%" data-height="50">
+
+      <form class="form" id="add-form">
+        <div class="form-group">
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <input id="admin-place-input" class="controls form-control" type="text" placeholder="enter location...">
+                <input id="admin-type-input" class="controls form-control" type="text" placeholder="enter type...">
+                <div class="checkbox">
+                  <label>
+                    <input id="checkbox" type="checkbox"> Active
+                  </label>
+                </div>
+                <button id="add-location" type="submit" class="btn btn-primary">Add Location</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+
+      <form class="form" id="update-form">
+        <div class="form-group">
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <input id="admin-place-update" class="controls form-control" type="text" placeholder="enter location...">
+                <input id="admin-type-update" class="controls form-control" type="text" placeholder="enter type...">
+                <div>
+                <label> <strong>Google Place ID:</strong>
+                  <p id="placeId"></p>
+                </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id="checkbox-update" type="checkbox"> Active
+                  </label>
+                </div>
+                <button id="update-location" type="submit" class="btn btn-default btn-primary">Update</button>
+                <button id="delete-location" type="submit" class="btn btn-default btn-danger">Delete</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="container">
+        <button id="show-locations" type="button" class="btn btn-primary">Show All Locations</button>
+      </div>
+
+    </div>
+    <div class="map col-md-8 col-sm-12" id="admin-map"></div>
+  </div>
+
+<!-- // duplicate above map?   -->
+
+
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+
+{% endblock %}
