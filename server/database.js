@@ -24,7 +24,7 @@ module.exports = {
   beerLocation: beerLocation
 }
 
-mongoose.connect('mongodb://localhost/beer-locator');
+mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/beer-locator');
 
 
 
